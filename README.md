@@ -259,8 +259,6 @@ Random seeds are set at the beginning of the following programs:
 
 ### Memory and Runtime Requirements
 
-> INSTRUCTIONS: Memory and compute-time requirements may also be relevant or even critical. Some example text follows. It may be useful to break this out by Table/Figure/section of processing. For instance, some estimation routines might run for weeks, but data prep and creating figures might only take a few minutes.
-
 #### Summary
 
 Approximate time needed to reproduce the analyses on a standard 2022 desktop machine:
