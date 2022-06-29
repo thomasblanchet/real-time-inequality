@@ -184,6 +184,7 @@ do "$programs/01-import-qcew.do"
 // The Forbes data is automatically scraped from the Wayback Machine,
 // so this part of the code should not require any change.
 
+cap mkdir "$work/01-import-forbes"
 python script "$programs/01-scrape-forbes.py", args("$rawdata/forbes-data/forbes.csv")
 do "$programs/01-import-forbes.do"
 
@@ -193,7 +194,59 @@ do "$programs/01-import-forbes.do"
 // The wealth indexes are downloaded directly from FRED and should not require
 // manual updates.
 
+cap mkdir "$work/01-import-wealth-indexes"
+cap mkdir "$graphs/01-import-wealth-indexes"
 do "$programs/01-import-wealth-indexes.do"
+
+// Monthly CPS data
+// ----------------
+//
+// The monthly CPS data extracts needs to be downloaded from IPUMS CPS every
+// month. See <https://cps.ipums.org/cps/>.
+//
+// It is stored under raw-data/cps-monthly/cps-monthly.dat
+
+cap mkdir "$work/01-import-cps-monthly"
+do "$programs/01-import-cps-monthly.do"
+
+// ACS/Census data (for transport)
+// -------------------------------
+//
+// The ACS/Census data must be downloaded from IPUMS USA
+// <https://usa.ipums.org/usa/>
+//
+// It is stored under raw-data/acs-data/usa.dat
+
+cap mkdir "$work/01-import-transport-acs"
+do "$programs/01-import-transport-acs.do"
+
+// Yearly CPS data (for transport)
+// -------------------------------
+//
+// The CPS data extract needs to be downloaded from IPUMS CPS
+// <https://cps.ipums.org/cps/>
+//
+// It is stored under raw-data/cps-data/cps.dat
+
+cap mkdir "$work/01-import-transport-cps"
+do "$programs/01-import-transport-cps.do"
+
+// SCF data (for transport)
+// ------------------------
+//
+// The SCF data must be downloaded from the Federal Reserve website
+// <https://www.federalreserve.gov/econres/scfindex.htm> and stored under
+// raw-data/scf-data. We use both the full public dataset and the extract
+// public data.
+
+cap mkdir "$work/01-import-transport-scf"
+do "$programs/01-import-transport-scf.do"
+
+// DINA microdata (for transport) --> move after 02-add-ssa-wages
+// ------------------------------
+
+cap mkdir "$work/01-import-transport-dina"
+do "$programs/01-import-transport-dina.do"
 
 // -------------------------------------------------------------------------- //
 // Preparation of the data
@@ -202,46 +255,43 @@ do "$programs/01-import-wealth-indexes.do"
 // Prepare NIPA data
 // -----------------
 
+cap mkdir "$work/02-prepare-nipa"
+cap mkdir "$graphs/02-prepare-nipa"
 do "$programs/02-prepare-nipa.do"
 
 // Prepare Financial Accounts data
 // --------------------------------
 
+cap mkdir "$work/02-prepare-fa"
+cap mkdir "$graphs/02-prepare-fa"
 do "$programs/02-prepare-fa.do"
 
 // Prepare national population data
 // --------------------------------
 
+cap mkdir "$work/02-prepare-pop"
+cap mkdir "$graphs/02-prepare-pop"
 do "$programs/02-prepare-pop.do"
 
 // Prepate BLS Employment data
 // ---------------------------
 
+cap mkdir "$work/02-prepare-bls-employment"
+cap mkdir "$graphs/02-prepare-bls-employment"
 do "$programs/02-prepare-bls-employment.do"
 
 // Adjust DINA files using SSA yearly employment and wages
 // -------------------------------------------------------
 
+cap mkdir "$work/02-add-ssa-wages"
 rsource using "$programs/02-add-ssa-wages.R", roptions(`" --vanilla --args "$work" "')
-
-// Data to match via optimal transport
-// -----------------------------------
-//
-// These data need to be downloaded manually from IPUMS or from the 
-// Federal Reserve website whenever a new version is available.
-//
-// IPUMS CPS: https://cps.ipums.org/cps/
-// IPUMS USA: https://usa.ipums.org/usa/ (for census/ACS)
-// SCF: https://www.federalreserve.gov/econres/scfindex.htm
-
-do "$programs/02-transport-import-acs.do"
-do "$programs/02-transport-import-cps.do"
-do "$programs/02-transport-import-scf.do"
-do "$programs/02-transport-import-dina.do"
 
 // Perform match via optimal transport
 // -----------------------------------
 
+cap mkdir "$work/02-export-transport-dina"
+do "$programs/02-export-transport-dina.do"
+cap mkdir "$graphs/02-transport-check-consistency"
 do "$programs/02-transport-check-consistency.do"
 
 // Note: the actual transport is computationally intensive and must run on
@@ -255,40 +305,62 @@ do "$programs/02-transport-check-consistency.do"
 // Match the DINA data with CPS/SCF/ACS using the calculated transport maps
 // ------------------------------------------------------------------------
 
+cap mkdir "$work/02-match-dina-transport"
 do "$programs/02-match-dina-transport.do"
 
 // Prepare DINA data
 // -----------------
 
+cap mkdir "$work/02-prepare-dina"
+cap mkdir "$graphs/02-prepare-dina"
 do "$programs/02-prepare-dina.do"
 
 // Prepare series on UI benefits recipients
 // ----------------------------------------
 
+cap mkdir "$work/02-prepare-ui"
+cap mkdir "$graphs/02-prepare-ui"
 do "$programs/02-prepare-ui.do"
 
 // Prepare QCEW data
 // -----------------
 
+cap mkdir "$work/02-disaggregate-qcew"
 do "$programs/02-disaggregate-qcew.do"
+
+cap mkdir "$work/02-update-qcew"
+cap mkdir "$graphs/02-update-qcew"
 do "$programs/02-update-qcew.do"
+
+cap mkdir "$work/02-tabulate-qcew"
 do "$programs/02-tabulate-qcew.do"
+
+cap mkdir "$work/02-adjust-seasonality-qcew"
+cap mkdir "$graphs/02-adjust-seasonality-qcew"
 do "$programs/02-adjust-seasonality-qcew.do"
 
 // Prepare monthly CPS data
-// -------------------------
+// ------------------------
 
+cap mkdir "$work/02-cps-monthly-earnings"
 do "$programs/02-cps-monthly-earnings.do"
+
+cap mkdir "$work/02-cps-monthly-cells"
+cap mkdir "$graphs/02-cps-monthly-cells"
 do "$programs/02-cps-monthly-cells.do"
 
 // Construct the monthly wage distribution
 // ---------------------------------------
 
+cap mkdir "$work/02-create-monthly-wages"
+cap mkdir "$graphs/02-create-monthly-wages"
 do "$programs/02-create-monthly-wages.do"
 
 // Distribute Paycheck Protection Program
 // --------------------------------------
 
+cap mkdir "$work/02-distribute-ppp-covid"
+cap mkdir "$graphs/02-distribute-ppp-covid"
 do "$programs/02-distribute-ppp-covid.do"
 
 // -------------------------------------------------------------------------- //
@@ -298,20 +370,34 @@ do "$programs/02-distribute-ppp-covid.do"
 // Monthly microfiles
 // ------------------
 
+cap mkdir "$work/03-build-monthly-microfiles"
+cap mkdir "$work/03-build-monthly-microfiles/microfiles"
 do "$programs/03-build-monthly-microfiles.do"
 
 // Backtesting version of the microfiles (using 1 and 2-year old IRS files)
 // ------------------------------------------------------------------------
 
+cap mkdir "$work/03-build-monthly-microfiles-backtest-1y"
+cap mkdir "$work/03-build-monthly-microfiles-backtest-1y/microfiles"
 do "$programs/03-build-monthly-microfiles-backtest-1y.do"
+
+cap mkdir "$work/03-build-monthly-microfiles-backtest-2y"
+cap mkdir "$work/03-build-monthly-microfiles-backtest-2y/microfiles"
 do "$programs/03-build-monthly-microfiles-backtest-2y.do"
+
 // Version with pure rescaling (to compare results)
+cap mkdir "$work/03-build-monthly-microfiles-backtest-rescaling-1y"
+cap mkdir "$work/03-build-monthly-microfiles-backtest-rescaling-1y/microfiles"
 do "$programs/03-build-monthly-microfiles-backtest-rescaling-1y.do"
+
+cap mkdir "$work/03-build-monthly-microfiles-backtest-rescaling-2y"
+cap mkdir "$work/03-build-monthly-microfiles-backtest-rescaling-2y/microfiles"
 do "$programs/03-build-monthly-microfiles-backtest-rescaling-2y.do"
 
 // Online database
 // ---------------
 
+cap mkdir "$work/03-build-online-database"
 do "$programs/03-build-online-database.do"
 // Dataset for the daily projection of wealth (done by the website)
 do "$programs/03-build-online-extrapolation.do"
@@ -319,8 +405,16 @@ do "$programs/03-build-online-extrapolation.do"
 // Decompositions
 // --------------
 
+cap mkdir "$work/03-decompose-components"
+cap mkdir "$graphs/03-decompose-components"
 do "$programs/03-decompose-components.do"
+
+cap mkdir "$work/03-decompose-education"
+cap mkdir "$graphs/03-decompose-education"
 do "$programs/03-decompose-education.do"
+
+cap mkdir "$work/03-decompose-race"
+cap mkdir "$graphs/03-decompose-race"
 do "$programs/03-decompose-race.do"
 
 // -------------------------------------------------------------------------- //
@@ -330,21 +424,33 @@ do "$programs/03-decompose-race.do"
 // Backtests
 // ---------
 
+cap mkdir "$work/04-backtest"
+cap mkdir "$graphs/04-backtest"
 do "$programs/04-backtest.do"
+
+cap mkdir "$work/04-backtest-rescaling"
+cap mkdir "$graphs/04-backtest-rescaling"
 do "$programs/04-backtest-rescaling.do"
 
 // Other graphs
 // ------------
 
+cap mkdir "$work/04-plot-covid"
+cap mkdir "$graphs/04-plot-covid"
+do "$programs/04-plot-covid.do"
+
+cap mkdir "$work/04-plot-bot50-recessions"
+cap mkdir "$graphs/04-plot-bot50-recessions"
+do "$programs/04-plot-bot50-recessions.do"
+
+cap mkdir "$work/04-analyze-wage-growth"
+cap mkdir "$graphs/04-analyze-wage-growth"
 do "$programs/04-analyze-wage-growth.do"
+
+cap mkdir "$work/04-gic-wages"
+cap mkdir "$graphs/04-gic-wages"
 do "$programs/04-gic-wages.do"
 
-do "$programs/04-plot-covid.do"
-do
-
-do "$programs/04-plot-income.do"
-do "$programs/04-plot-hweal.do"
-do "$programs/04-plot-online-database.do"
-do "$programs/04-plot-presentation.do"
-
-
+cap mkdir "$work/04-plot-gender-gaps"
+cap mkdir "$graphs/04-plot-gender-gaps"
+do "$programs/04-plot-gender-gaps.do"

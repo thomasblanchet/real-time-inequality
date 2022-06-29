@@ -18,7 +18,6 @@ global work       "$root/work-data"
 global graphs     "$root/graphs"
 global tables     "$root/tables"
 global rawdata    "$root/raw-data"
-global auxiliary  "$root/auxiliary-data"
 global transport  "$root/transport"
 global website    "$root/website"
 

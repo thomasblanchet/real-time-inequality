@@ -1,0 +1,351 @@
+CES Industry Code, NAICS Code, CES Industry Title, Ownership, Next Highest Level, State Published Series Counts, Area Published Series Counts
+00-000000,,Total Nonfarm,Private and all government,,53,445
+05-000000,,Total Private,Private,00-000000,53,445
+06-000000,,Goods Producing,Private,05-000000,53,445
+07-000000,,Service-Providing,Private and all government,00-000000,53,445
+08-000000,,Private Service Providing,Private,05-000000,53,445
+10-000000,,Mining and Logging,Private,15-000000,49,66
+10-113300,1133,Logging,Private,10-000000,4,0
+10-210000,21,"Mining, Quarrying, and Oil and Gas Extraction",Private,10-000000,9,0
+10-211000,211,Oil and Gas Extraction,Private,10-210000,4,1
+10-212000,212,Mining (except Oil and Gas),Private,10-210000,5,0
+10-212100,2121,Coal Mining,Private,10-212000,3,0
+10-212200,2122,Metal Ore Mining,Private,10-212000,2,0
+10-213000,213,Support Activities for Mining,Private,10-210000,6,3
+10-213111,213111,Drilling Oil and Gas Wells,Private,10-213000,1,0
+10-213112,213112,Support Activities for Oil and Gas Operations,Private,10-213000,1,0
+15-000000,,"Mining, Logging and Construction",Private,06-000000,53,372
+20-000000,,Construction,Private,15-000000,49,68
+20-236000,236,Construction of Buildings,Private,20-000000,43,29
+20-236100,2361,Residential Building Construction,Private,20-236000,9,4
+20-236200,2362,Nonresidential Building Construction,Private,20-236000,7,4
+20-237000,237,Heavy and Civil Engineering Construction,Private,20-000000,37,14
+20-237100,2371,Utility System Construction,Private,20-237000,2,0
+20-237200,2372,Land Subdivision,Private,20-237000,1,0
+20-237300,2373,"Highway, Street, and Bridge Construction",Private,20-237000,2,0
+20-237900,2379,Other Heavy and Civil Engineering Construction,Private,20-237000,1,0
+20-238000,238,Specialty Trade Contractors,Private,20-000000,45,73
+20-238100,2381,"Foundation, Structure, and Building Exterior Contractors",Private,20-238000,7,6
+20-238200,2382,Building Equipment Contractors,Private,20-238000,13,7
+20-238300,2383,Building Finishing Contractors,Private,20-238000,6,5
+20-238900,2389,Other Specialty Trade Contractors,Private,20-238000,6,2
+30-000000,,Manufacturing,Private,06-000000,53,392
+31-000000,,Durable Goods,Private,30-000000,51,151
+31-321000,321,Wood Product Manufacturing,Private,31-000000,15,4
+31-321100,3211,Sawmills and Wood Preservation,Private,31-321000,3,0
+31-321200,3212,"Veneer, Plywood, and Engineered Wood Product Manufacturing",Private,31-321000,1,0
+31-321900,3219,Other Wood Product Manufacturing,Private,31-321000,2,0
+31-327000,327,Nonmetallic Mineral Product Manufacturing,Private,31-000000,8,1
+31-327300,3273,Cement and Concrete Product Manufacturing,Private,31-327000,1,0
+31-331000,331,Primary Metal Manufacturing,Private,31-000000,11,8
+31-331100,3311,Iron and Steel Mills and Ferroalloy Manufacturing,Private,31-331000,2,1
+31-331500,3315,Foundries,Private,31-331000,1,0
+31-332000,332,Fabricated Metal Product Manufacturing,Private,31-000000,30,15
+31-332300,3323,Architectural and Structural Metals Manufacturing,Private,31-332000,2,0
+31-332700,3327,"Machine Shops; Turned Product; and Screw, Nut, and Bolt Manufacturing",Private,31-332000,4,0
+31-332900,3329,Other Fabricated Metal Product Manufacturing,Private,31-332000,2,0
+31-333000,333,Machinery Manufacturing,Private,31-000000,25,15
+31-333100,3331,"Agriculture, Construction, and Mining Machinery Manufacturing",Private,31-333000,2,1
+31-333200,3332,Industrial Machinery Manufacturing,Private,31-333000,1,0
+31-333300,3333,Commercial and Service Industry Machinery Manufacturing,Private,31-333000,1,0
+31-333500,3335,Metalworking Machinery Manufacturing,Private,31-333000,3,0
+31-333600,3336,"Engine, Turbine, and Power Transmission Equipment Manufacturing",Private,31-333000,2,0
+31-333900,3339,Other General Purpose Machinery Manufacturing,Private,31-333000,1,0
+31-334000,334,Computer and Electronic Product Manufacturing,Private,31-000000,29,34
+31-334100,3341,Computer and Peripheral Equipment Manufacturing,Private,31-334000,3,2
+31-334111,334111,Electronic Computer Manufacturing,Private,31-334100,1,1
+31-334200,3342,Communications Equipment Manufacturing,Private,31-334000,3,0
+31-334400,3344,Semiconductor and Other Electronic Component Manufacturing,Private,31-334000,6,7
+31-334412,334412,Bare Printed Circuit Board Manufacturing,Private,31-334400,1,1
+31-334413,334413,Semiconductor and Related Device Manufacturing,Private,31-334400,1,1
+31-334500,3345,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",Private,31-334000,8,9
+31-335000,335,"Electrical Equipment, Appliance, and Component Manufacturing",Private,31-000000,14,4
+31-335200,3352,Household Appliance Manufacturing,Private,31-335000,2,0
+31-335300,3353,Electrical Equipment Manufacturing,Private,31-335000,1,0
+31-336000,336,Transportation Equipment Manufacturing,Private,31-000000,33,44
+31-336100,3361,Motor Vehicle Manufacturing,Private,31-336000,7,3
+31-336200,3362,Motor Vehicle Body and Trailer Manufacturing,Private,31-336000,1,1
+31-336300,3363,Motor Vehicle Parts Manufacturing,Private,31-336000,7,7
+31-336400,3364,Aerospace Product and Parts Manufacturing,Private,31-336000,11,10
+31-336600,3366,Ship and Boat Building,Private,31-336000,3,2
+31-337000,337,Furniture and Related Product Manufacturing,Private,31-000000,10,4
+31-337100,3371,Household and Institutional Furniture and Kitchen Cabinet Manufacturing,Private,31-337000,2,1
+31-339000,339,Miscellaneous durable goods manufacturing,Private,31-000000,15,5
+31-339100,3391,Medical Equipment and Supplies Manufacturing,Private,31-339000,4,1
+31-339900,3399,Other Miscellaneous Manufacturing,Private,31-339000,2,1
+31-339910,33991,Jewelry and Silverware Manufacturing,Private,31-339900,1,1
+32-000000,,Non-Durable Goods,Private,30-000000,51,133
+32-311000,311,Food Manufacturing,Private,32-000000,32,25
+32-311200,3112,Grain and Oilseed Milling,Private,32-311000,1,0
+32-311400,3114,Fruit and Vegetable Preserving and Specialty Food Manufacturing,Private,32-311000,4,0
+32-311500,3115,Dairy Product Manufacturing,Private,32-311000,1,1
+32-311600,3116,Animal Slaughtering and Processing,Private,32-311000,9,2
+32-311700,3117,Seafood Product Preparation and Packaging,Private,32-311000,1,0
+32-311800,3118,Bakeries and Tortilla Manufacturing,Private,32-311000,1,1
+32-311900,3119,Other Food Manufacturing,Private,32-311000,1,0
+32-312000,312,Beverage and Tobacco Product Manufacturing,Private,32-000000,6,1
+32-312100,3121,Beverage Manufacturing,Private,32-312000,1,0
+32-312200,3122,Tobacco Manufacturing,Private,32-312000,1,0
+32-313000,313,Textile Mills,Private,32-000000,5,5
+32-313100,3131,"Fiber, Yarn, and Thread Mills",Private,32-313000,2,0
+32-313200,3132,Fabric Mills,Private,32-313000,1,0
+32-313300,3133,Textile and Fabric Finishing and Fabric Coating Mills,Private,32-313000,1,0
+32-314000,314,Textile Product Mills,Private,32-000000,4,1
+32-314100,3141,Textile Furnishings Mills,Private,32-314000,1,0
+32-315000,315,Apparel Manufacturing,Private,32-000000,4,3
+32-315100,3151,Apparel Knitting Mills,Private,32-315000,1,0
+32-315200,3152,Cut and Sew Apparel Manufacturing,Private,32-315000,1,1
+32-322000,322,Paper Manufacturing,Private,32-000000,11,3
+32-322100,3221,"Pulp, Paper, and Paperboard Mills",Private,32-322000,1,0
+32-322200,3222,Converted Paper Product Manufacturing,Private,32-322000,1,0
+32-323000,323,Printing and Related Support Activities,Private,32-000000,14,3
+32-324000,324,Petroleum and Coal Products Manufacturing,Private,32-000000,2,2
+32-325000,325,Chemical Manufacturing,Private,32-000000,17,16
+32-325100,3251,Basic Chemical Manufacturing,Private,32-325000,2,1
+32-325400,3254,Pharmaceutical and Medicine Manufacturing,Private,32-325000,6,3
+32-325600,3256,"Soap, Cleaning Compound, and Toilet Preparation Manufacturing",Private,32-325000,1,0
+32-326000,326,Plastics and Rubber Products Manufacturing,Private,32-000000,17,3
+32-326100,3261,Plastics Product Manufacturing,Private,32-326000,4,0
+32-326200,3262,Rubber Product Manufacturing,Private,32-326000,1,0
+40-000000,,"Trade, Transportation, and Utilities",Private,08-000000,53,412
+41-000000,42,Wholesale Trade,Private,40-000000,53,333
+41-423000,423,"Merchant Wholesalers, Durable Goods",Private,41-000000,34,43
+41-423100,4231,Motor Vehicle and Motor Vehicle Parts and Supplies Merchant Wholesalers,Private,41-423000,3,1
+41-423200,4232,Furniture and Home Furnishing Merchant Wholesalers,Private,41-423000,1,0
+41-423300,4233,Lumber and Other Construction Materials Merchant Wholesalers,Private,41-423000,1,0
+41-423400,4234,Professional and Commercial Equipment and Supplies Merchant Wholesalers,Private,41-423000,7,4
+41-423600,4236,Household Appliances and Electrical and Electronic Goods Merchant Wholesalers,Private,41-423000,4,1
+41-423700,4237,"Hardware, and Plumbing and Heating Equipment and Supplies Merchant Whole",Private,41-423000,1,0
+41-423800,4238,"Machinery, Equipment, and Supplies Merchant Wholesalers",Private,41-423000,5,1
+41-423900,4239,Miscellaneous Durable Goods Merchant Wholesalers,Private,41-423000,1,1
+41-424000,424,"Merchant Wholesalers, Nondurable Goods",Private,41-000000,32,33
+41-424100,4241,Paper and Paper Product Merchant Wholesalers,Private,41-424000,1,0
+41-424300,4243,"Apparel, Piece Goods, and Notions Merchant Wholesalers",Private,41-424000,2,2
+41-424400,4244,Grocery and Related Product Merchant Wholesalers,Private,41-424000,7,2
+41-424600,4246,Chemical and Allied Products Merchant Wholesalers,Private,41-424000,2,0
+41-424900,4249,Miscellaneous Nondurable Goods Merchant Wholesalers,Private,41-424000,1,1
+41-425000,425,Wholesale Electronic Markets and Agents and Brokers,Private,41-000000,19,7
+42-000000,,Retail Trade,Private,40-000000,53,395
+42-441000,441,Motor Vehicle and Parts Dealers,Private,42-000000,37,19
+42-441100,4411,Automobile Dealers,Private,42-441000,9,1
+42-441200,4412,Other Motor Vehicle Dealers,Private,42-441000,1,1
+42-441300,4413,"Automotive Parts, Accessories, and Tire Stores",Private,42-441000,2,2
+42-442000,442,Furniture and Home Furnishings Stores,Private,42-000000,14,2
+42-442100,4421,Furniture Stores,Private,42-442000,1,0
+42-442200,4422,Home Furnishings Stores,Private,42-442000,1,0
+42-443000,443,Electronics and Appliance Stores,Private,42-000000,8,3
+42-444000,444,Building Material and Garden Equipment and Supplies Dealers,Private,42-000000,26,18
+42-444100,4441,Building Material and Supplies Dealers,Private,42-444000,4,2
+42-445000,445,Food and Beverage Stores,Private,42-000000,43,89
+42-445100,4451,Grocery Stores,Private,42-445000,18,21
+42-445200,4452,Specialty Food Stores,Private,42-445000,2,0
+42-445300,4453,"Beer, Wine, and Liquor Stores",Private,42-445000,1,0
+42-446000,446,Health and Personal Care Stores,Private,42-000000,24,33
+42-447000,447,Gasoline Stations,Private,42-000000,18,2
+42-448000,448,Clothing and Clothing Accessories Stores,Private,42-000000,23,35
+42-448100,4481,Clothing Stores,Private,42-448000,4,3
+42-448300,4483,"Jewelry, Luggage, and Leather Goods Stores",Private,42-448000,1,0
+42-451000,451,"Sporting Goods, Hobby, Musical Instrument, and Book Stores",Private,42-000000,11,9
+42-451100,4511,"Sporting Goods, Hobby, and Musical Instrument Stores",Private,42-451000,1,1
+42-451200,4512,Book Stores and News Dealers,Private,42-451000,1,1
+42-452000,452,General Merchandise Stores,Private,42-000000,43,137
+42-452200,4522,Department Stores,Private,42-452000,18,33
+42-452300,4523,"General Merchandise Stores, including Warehouse Clubs and Supercenters",Private,42-452000,9,12
+42-453000,453,Miscellaneous Store Retailers,Private,42-000000,16,7
+42-453200,4532,"Office Supplies, Stationery, and Gift Stores",Private,42-453000,3,0
+42-453300,4533,Used Merchandise Stores,Private,42-453000,1,0
+42-453900,4539,Other Miscellaneous Store Retailers,Private,42-453000,1,0
+42-454000,454,Nonstore Retailers,Private,42-000000,10,1
+42-454100,4541,Electronic Shopping and Mail-Order Houses,Private,42-454000,4,0
+43-000000,,"Transportation, Warehousing, and Utilities",Private,40-000000,53,336
+43-220000,22,Utilities,Private,43-000000,42,26
+43-221100,2211,"Electric Power Generation, Transmission and Distribution",Private,43-220000,7,0
+43-221200,2212,Natural Gas Distribution,Private,43-220000,2,0
+43-400089,,Transportation and Warehousing,Private,43-000000,46,55
+43-481000,481,Air Transportation,Private,43-400089,17,18
+43-481100,4811,Scheduled Air Transportation,Private,43-481000,1,0
+43-482000,482,Rail Transportation,Private,43-400089,2,2
+43-483000,483,Water Transportation,Private,43-400089,1,0
+43-484000,484,Truck Transportation,Private,43-400089,35,17
+43-484100,4841,General Freight Trucking,Private,43-484000,10,2
+43-484200,4842,Specialized Freight Trucking,Private,43-484000,5,0
+43-485000,485,Transit and Ground Passenger Transportation,Private,43-400089,8,4
+43-485300,4853,Taxi and Limousine Service,Private,43-485000,1,1
+43-485400,4854,School and Employee Bus Transportation,Private,43-485000,1,0
+43-486000,486,Pipeline Transportation,Private,43-400089,1,1
+43-488000,488,Support Activities for Transportation,Private,43-400089,8,5
+43-488100,4881,Support Activities for Air Transportation,Private,43-488000,0,1
+43-488300,4883,Support Activities for Water Transportation,Private,43-488000,1,0
+43-488400,4884,Support Activities for Road Transportation,Private,43-488000,1,0
+43-488500,4885,Freight Transportation Arrangement,Private,43-488000,1,0
+43-492000,492,Couriers and Messengers,Private,43-400089,14,18
+43-493000,493,Warehousing and Storage,Private,43-400089,18,16
+50-000000,51,Information,Private,08-000000,53,355
+50-511000,511,Publishing Industries (except Internet),Private,50-000000,20,19
+50-511100,5111,"Newspaper, Periodical, Book, and Directory Publishers",Private,50-511000,4,2
+50-511200,5112,Software Publishers,Private,50-511000,5,5
+50-512000,512,Motion Picture and Sound Recording Industries,Private,50-000000,3,2
+50-512100,5121,Motion Picture and Video Industries,Private,50-512000,1,0
+50-512110,51211,Motion Picture and Video Production,Private,50-512100,1,0
+50-515000,515,Broadcasting (except Internet),Private,50-000000,4,3
+50-515100,5151,Radio and Television Broadcasting,Private,50-515000,2,2
+50-515200,5152,Cable and Other Subscription Programming,Private,50-515000,2,2
+50-517000,517,Telecommunications,Private,50-000000,31,57
+50-517300,5173,Wired and Wireless Telecommunications Carriers,Private,50-517000,1,1
+50-517311,517311,Wired Telecommunications Carriers,Private,50-517300,4,7
+50-518000,518,"Data Processing, Hosting, and Related Services",Private,50-000000,8,6
+50-519000,519,Other Information Services,Private,50-000000,1,0
+55-000000,,Financial Activities,Private,08-000000,53,363
+55-520000,52,Finance and Insurance,Private,55-000000,51,124
+55-522000,521,Credit Intermediation and Related Activities including Monetary Authorities - Central Bank,Private,55-520000,36,68
+55-522000,522,Credit Intermediation and Related Activities including Monetary Authorities - Central Bank,Private,55-520000,36,68
+55-522100,521,Depository Credit Intermediation including Monetary Authorities - Central Bank,Private,55-522000,14,32
+55-522100,5221,Depository Credit Intermediation including Monetary Authorities - Central Bank,Private,55-522000,14,32
+55-522110,52211,Commercial Banking,Private,55-522100,1,1
+55-522200,5222,Nondepository Credit Intermediation,Private,55-522000,6,8
+55-522300,5223,Activities Related to Credit Intermediation,Private,55-522000,2,1
+55-523000,523,Financial Investments and Related Activities including Financial Vehicles,Private,55-520000,11,13
+55-523000,525,Financial Investments and Related Activities including Financial Vehicles,Private,55-520000,11,13
+55-523100,5231,Securities and Commodity Contracts Intermediation and Brokerage,Private,55-523000,3,2
+55-523110,52311,Investment Banking and Securities Dealing,Private,55-523100,1,1
+55-523120,52312,Securities Brokerage,Private,55-523100,1,1
+55-523900,5239,Other Financial Investment Activities including Financial Vehicles,Private,55-523000,1,0
+55-523900,525,Other Financial Investment Activities including Financial Vehicles,Private,55-523000,1,0
+55-524000,524,Insurance Carriers and Related Activities,Private,55-520000,38,57
+55-524100,5241,Insurance Carriers,Private,55-524000,11,18
+55-524113,524113,Direct Life Insurance Carriers,Private,55-524110,1,0
+55-524114,524114,Direct Health and Medical Insurance Carriers,Private,55-524110,1,0
+55-524126,524126,Direct Property and Casualty Insurance Carriers,Private,55-524120,1,0
+55-524200,5242,"Agencies, Brokerages, and Other Insurance Related Activities",Private,55-524000,7,4
+55-530000,53,Real Estate and Rental and Leasing,Private,55-000000,50,49
+55-531000,531,Real Estate,Private,55-530000,16,16
+55-531100,5311,Lessors of Real Estate,Private,55-531000,2,2
+55-531200,5312,Offices of Real Estate Agents and Brokers,Private,55-531000,2,1
+55-531300,5313,Activities Related to Real Estate,Private,55-531000,2,1
+55-532000,532,Rental and Leasing Services,Private,55-530000,4,3
+55-532100,5321,Automotive Equipment Rental and Leasing,Private,55-532000,1,0
+55-532200,5322,Consumer Goods Rental,Private,55-532000,1,0
+55-532300,5323,General Rental Centers,Private,55-532000,1,0
+55-532400,5324,Commercial and Industrial Machinery and Equipment Rental and Leasing,Private,55-532000,1,0
+60-000000,,Professional and Business Services,Private,08-000000,53,383
+60-540000,54,"Professional, Scientific, and Technical Services",Private,60-000000,51,119
+60-541100,5411,Legal Services,Private,60-540000,22,20
+60-541200,5412,"Accounting, Tax Preparation, Bookkeeping, and Payroll Services",Private,60-540000,20,17
+60-541300,5413,"Architectural, Engineering, and Related Services",Private,60-540000,27,24
+60-541400,5414,Specialized Design Services,Private,60-540000,3,0
+60-541500,5415,Computer Systems Design and Related Services,Private,60-540000,23,30
+60-541600,5416,"Management, Scientific, and Technical Consulting Services",Private,60-540000,15,10
+60-541700,5417,Scientific Research and Development Services,Private,60-540000,9,14
+60-541800,5418,"Advertising, Public Relations, and Related Services",Private,60-540000,7,3
+60-541900,5419,"Other Professional, Scientific, and Technical Services",Private,60-540000,5,1
+60-550000,55,Management of Companies and Enterprises,Private,60-000000,47,86
+60-560000,56,Administrative and Support and Waste Management and Remediation Services,Private,60-000000,51,142
+60-561000,561,Administrative and Support Services,Private,60-560000,17,38
+60-561100,5611,Office Administrative Services,Private,60-561000,3,1
+60-561200,5612,Facilities Support Services,Private,60-561000,1,1
+60-561300,5613,Employment Services,Private,60-561000,36,71
+60-561320,56132,Temporary Help Services,Private,60-561300,2,0
+60-561400,5614,Business Support Services,Private,60-561000,17,11
+60-561420,56142,Telephone Call Centers,Private,60-561400,1,0
+60-561500,5615,Travel Arrangement and Reservation Services,Private,60-561000,4,2
+60-561600,5616,Investigation and Security Services,Private,60-561000,8,9
+60-561610,56161,"Investigation, Guard, and Armored Car Services",Private,60-561600,1,0
+60-561700,5617,Services to Buildings and Dwellings,Private,60-561000,25,28
+60-561900,5619,Other Support Services,Private,60-561000,2,2
+60-562000,562,Waste Management and Remediation Services,Private,60-560000,6,4
+65-000000,,Education and Health Services,Private,08-000000,53,386
+65-610000,61,Educational Services,Private,65-000000,52,80
+65-611100,6111,Elementary and Secondary Schools,Private,65-610000,11,8
+65-611200,6112,Junior Colleges,Private,65-610000,1,0
+65-611300,6113,"Colleges, Universities, and Professional Schools",Private,65-610000,24,17
+65-611600,6116,Other Schools and Instruction,Private,65-610000,1,0
+65-620000,62,Health Care and Social Assistance,Private,65-000000,53,173
+65-621000,621,Ambulatory Health Care Services,Private,65-620000,44,77
+65-621100,6211,Offices of Physicians,Private,65-621000,20,13
+65-621200,6212,Offices of Dentists,Private,65-621000,5,2
+65-621300,6213,Offices of Other Health Practitioners,Private,65-621000,2,2
+65-621400,6214,Outpatient Care Centers,Private,65-621000,5,1
+65-621500,6215,Medical and Diagnostic Laboratories,Private,65-621000,1,0
+65-621600,6216,Home Health Care Services,Private,65-621000,9,2
+65-621900,6219,Other Ambulatory Health Care Services,Private,65-621000,1,0
+65-622000,622,Hospitals,Private,65-620000,48,113
+65-622100,6221,General Medical and Surgical Hospitals,Private,65-622000,6,5
+65-622200,6222,Psychiatric and Substance Abuse Hospitals,Private,65-622000,2,0
+65-622300,6223,Specialty (except Psychiatric and Substance Abuse) Hospitals,Private,65-622000,2,1
+65-623000,623,Nursing and Residential Care Facilities,Private,65-620000,42,38
+65-623100,6231,Nursing Care Facilities (Skilled Nursing Facilities),Private,65-623000,9,3
+65-623200,6232,"Residential Intellectual and Developmental Disability, Mental Health and Substance Abuse Facilities",Private,65-623000,3,1
+65-623300,6233,Continuing Care Retirement Communities and Assisted Living Facilities for the Elderly,Private,65-623000,4,0
+65-623900,6239,Other Residential Care Facilities,Private,65-623000,2,1
+65-624000,624,Social Assistance,Private,65-620000,40,30
+65-624100,6241,Individual and Family Services,Private,65-624000,5,2
+65-624120,62412,Services for the Elderly and Persons with Disabilities,Private,65-624100,1,0
+65-624200,6242,"Community Food and Housing, and Emergency and Other Relief Services",Private,65-624000,2,1
+65-624300,6243,Vocational Rehabilitation Services,Private,65-624000,2,1
+65-624400,6244,Child Day Care Services,Private,65-624000,7,2
+70-000000,,Leisure and Hospitality,Private,08-000000,53,394
+70-710000,71,"Arts, Entertainment, and Recreation",Private,70-000000,50,47
+70-711000,711,"Performing Arts, Spectator Sports, and Related Industries",Private,70-710000,3,3
+70-711100,7111,Performing Arts Companies,Private,70-711000,1,0
+70-711200,7112,Spectator Sports,Private,70-711000,1,0
+70-711300,7113,"Promoters of Performing Arts, Sports, and Similar Events",Private,70-711000,0,1
+70-711500,7115,"Independent Artists, Writers, and Performers",Private,70-711000,1,1
+70-712000,712,"Museums, Historical Sites, and Similar Institutions",Private,70-710000,3,3
+70-713000,713,"Amusement, Gambling, and Recreation Industries",Private,70-710000,26,15
+70-713100,7131,Amusement Parks and Arcades,Private,70-713000,2,0
+70-713200,7132,Gambling Industries,Private,70-713000,4,3
+70-713900,7139,Other Amusement and Recreation Industries,Private,70-713000,4,2
+70-713940,71394,Fitness and Recreational Sports Centers,Private,70-713900,1,0
+70-720000,72,Accommodation and Food Services,Private,70-000000,51,143
+70-721000,721,Accommodation,Private,70-720000,44,40
+70-721100,7211,Traveler Accommodation,Private,70-721000,1,1
+70-721110,72111,Hotels (except Casino Hotels) and Motels,Private,70-721100,1,0
+70-721120,72112,Casino Hotels,Private,70-721100,3,4
+70-722000,722,Food Services and Drinking Places,Private,70-720000,49,121
+70-722300,7223,Special Food Services,Private,70-722000,6,3
+70-722400,7224,Drinking Places (Alcoholic Beverages),Private,70-722000,6,1
+70-722500,7225,Restaurants and Other Eating Places,Private,70-722000,21,31
+70-722511,722511,Full-Service Restaurants,Private,70-722500,22,34
+70-722590,722513,Limited-Service Restaurants and Other Eating Places,Private,70-722500,22,27
+70-722590,722514,Limited-Service Restaurants and Other Eating Places,Private,70-722500,22,27
+70-722590,722515,Limited-Service Restaurants and Other Eating Places,Private,70-722500,22,27
+80-000000,,Other Services,Private,08-000000,53,357
+80-811000,811,Repair and Maintenance,Private,80-000000,30,12
+80-811100,8111,Automotive Repair and Maintenance,Private,80-811000,6,0
+80-811300,8113,Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance,Private,80-811000,1,0
+80-811400,8114,Personal and Household Goods Repair and Maintenance,Private,80-811000,1,0
+80-812000,812,Personal and Laundry Services,Private,80-000000,26,12
+80-812100,8121,Personal Care Services,Private,80-812000,3,0
+80-812300,8123,Drycleaning and Laundry Services,Private,80-812000,2,0
+80-812900,8129,Other Personal Services,Private,80-812000,1,0
+80-813000,813,"Religious, Grantmaking, Civic, Professional, and Similar Organizations",Private,80-000000,24,11
+80-813100,8131,Religious Organizations,Private,80-813000,2,0
+80-813200,8132,Grantmaking and Giving Services,Private,80-813000,2,0
+80-813300,8133,Social Advocacy Organizations,Private,80-813000,1,0
+80-813400,8134,Civic and Social Organizations,Private,80-813000,2,0
+80-813900,8139,"Business, Professional, Labor, Political, and Similar Organizations",Private,80-813000,3,1
+90-000000,All in-scope NAICS,Government,All government,07-000000,53,445
+90-910000,All in-scope NAICS,Federal Government,Federal Government,90-000000,53,402
+90-912811,All in-scope NAICS,National Security,Federal Government,-,1,0
+90-912991,All in-scope NAICS,Federal Government excluding Department of Defense,Federal Government,-,1,12
+90-912993,All in-scope NAICS,Federal Government excluding Postal Service,Federal Government,-,1,0
+90-912994,All in-scope NAICS,"Federal Government excluding Postal Service, Department of Defense, Ship Building, and Hospitals",Federal Government,-,1,0
+90-916220,All in-scope NAICS,Federal Government Hospitals,Federal Government,-,1,1
+90-919110,All in-scope NAICS,Department of Defense,Federal Government,-,1,13
+90-919118,All in-scope NAICS,"Department of Defense, including Ship Building",Federal Government,-,1,0
+90-919119,All in-scope NAICS,"Department of Defense, including Ship Building and Hospitals",Federal Government,-,5,2
+90-919120,All in-scope NAICS,U.S. Postal Service,Federal Government,-,13,7
+90-920000,All in-scope NAICS,State Government,State Government,90-000000,52,397
+90-921611,All in-scope NAICS,State Government Educational Services,State Government,90-920000,50,74
+90-922000,All in-scope NAICS,State Government Excluding Education,State Government,90-920000,49,26
+90-922622,All in-scope NAICS,State Government Hospitals,State Government,-,4,6
+90-922991,All in-scope NAICS,State Government excluding Educational Services and Hospitals,State Government,-,1,0
+90-930000,All in-scope NAICS,Local Government,Local Government,90-000000,51,396
+90-931150,All in-scope NAICS,Indian Tribes,Local Government,-,2,1
+90-931611,All in-scope NAICS,Local Government Educational Services,Local Government,90-930000,48,138
+90-932000,All in-scope NAICS,Local Government excluding Educational Services,Local Government,90-930000,48,54
+90-932480,All in-scope NAICS,Transportation,Local Government,-,1,0
+90-932622,All in-scope NAICS,Local Government Hospitals,Local Government,-,5,2
+90-936111,All in-scope NAICS,Local Government Elementary and Secondary Education,Local Government,-,1,1
+90-940000,All in-scope NAICS,Total State and Local Government,State and Local Government,-,1,12
+90-940001,All in-scope NAICS,District of Columbia Government,State and Local Government,-,1,0

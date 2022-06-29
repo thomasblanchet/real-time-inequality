@@ -2,6 +2,15 @@
 work-data/*
 *.scheme
 **/.DS_Store
+~$*
 raw-data/dina-data/microfiles/*
 raw-data/ppp-covid-data/*
 raw-data/qcew-data
+raw-data/forbes-data
+raw-data/scf-data
+raw-data/cps-data
+raw-data/cps-monthly
+raw-data/acs-data
+graphs/*
+transport/*/*.csv
+website/*
