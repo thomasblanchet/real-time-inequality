@@ -20,9 +20,11 @@ The data, tables and figures are licensed under the [Creative Commons Attributio
 
 ### Summary of Availability
 
-- [ ] All data **are** publicly available.
-- [x] Some data **cannot be made** publicly available.
+- [x] All data **are** publicly available.
+- [ ] Some data **cannot be made** publicly available.
 - [ ] **No data can be made** publicly available.
+
+*Note:* Some of the data (IRS public-use microfiles, IPUMS data) cannot be shared directly in the repository, but are accessible to researchers that request them. See below for details.
 
 ### Details on each Data Source
 

@@ -314,7 +314,6 @@ replace a051rc = a032rc - (a033rc + a041rc + a048rc + w255rc + w056rc - a107rc +
 replace a054rc = a051rc*(L.a054rc/L.a051rc) if missing(a054rc)
 replace a551rc = a051rc*(L.a551rc/L.a051rc) if missing(a551rc)
 
-
 generate gdp_growth = 100*(((a191rc/a191rd)/(L.a191rc/L.a191rd))^4 - 1)
 generate gdi_growth = 100*(((a261rc/a191rd)/(L.a261rc/L.a191rd))^4 - 1)
 

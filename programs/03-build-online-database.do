@@ -2,7 +2,7 @@
 // Build the online database
 // -------------------------------------------------------------------------- //
 
-global date_begin = ym(1976, 01)
+global date_begin = ym(2021, 01)
 global date_end   = ym(2022, 04)
 
 cap use "$work/03-build-online-database/online-database.dta", clear
