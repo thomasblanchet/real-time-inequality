@@ -50,6 +50,8 @@ foreach t of numlist $date_begin / $date_end {
 
 use "$work/04-plot-gender-gaps/peinc-bracket-gender.dta", clear
 
+keep if ym(year, month) <= ym(2022, 03)
+
 // Aggregate to have overall average
 generate pop = 0.5 if bracket == "bot50"
 replace pop = 0.40 if bracket == "mid40"
@@ -91,7 +93,7 @@ graph export "$graphs/04-plot-gender-gaps/index-peinc-gender.pdf", replace
 // During the last two recessions/recoveries
 generate cycle = ""
 replace cycle = "Great Recession (2007-2016)" if inrange(year(dofq(time)), 2007, 2016)
-replace cycle = "Covid Recession (2020-2021)" if inrange(year(dofq(time)), 2020, 2021)
+replace cycle = "Covid Recession (2020-2021)" if inrange(year(dofq(time)), 2020, 2022)
 drop if cycle == ""
 
 sort sex cycle time
@@ -110,10 +112,10 @@ graph export "$graphs/04-plot-gender-gaps/index-peinc-gender-cycles.pdf", replac
 // Plot bottom 50% & top 10%
 // -------------------------------------------------------------------------- //
 
-use "$work/peinc-bracket-gender.dta", clear
+use "$work//04-plot-gender-gaps/peinc-bracket-gender.dta", clear
 
 // Correct for inflation
-merge n:1 year month using "$work/nipa-simplified-monthly.dta", nogenerate keep(match) keepusing(nipa_deflator)
+merge n:1 year month using "$work/02-prepare-nipa/nipa-simplified-monthly.dta", nogenerate keep(match) keepusing(nipa_deflator)
 replace peinc = peinc/nipa_deflator
 
 generate time = ym(year, month)

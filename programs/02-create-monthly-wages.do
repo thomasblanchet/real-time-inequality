@@ -193,7 +193,7 @@ gr tw  (line chg_flemp chg_flemp if bracket == "top1", col(black) lw(medthick)) 
     xlabel(-1.5(0.5)1.5, format(%2.1f)) ylabel(-1.5(0.5)1.5, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-top1-1y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-top1-1y.pdf", replace
 
 gr tw  (line chg2_flemp chg2_flemp if bracket == "top1", col(black) lw(medthick)) ///
     (sc chg2_flemp chg2_flemp_mthly if bracket == "top1", col(ebblue) msym(O)) if year < 2020, ///
@@ -202,7 +202,7 @@ gr tw  (line chg2_flemp chg2_flemp if bracket == "top1", col(black) lw(medthick)
     xlabel(-2(0.5)2, format(%2.1f)) ylabel(-2(0.5)2, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-top1-2y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-top1-2y.pdf", replace
 
 // Next 9%
 gr tw  (line chg_flemp chg_flemp if bracket == "next9", col(black) lw(medthick)) ///
@@ -212,7 +212,7 @@ gr tw  (line chg_flemp chg_flemp if bracket == "next9", col(black) lw(medthick))
     xlabel(-1.5(0.5)1.5, format(%2.1f)) ylabel(-1.5(0.5)1.5, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-next9-1y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-next9-1y.pdf", replace
 
 gr tw  (line chg2_flemp chg2_flemp if bracket == "next9", col(black) lw(medthick)) ///
     (sc chg2_flemp chg2_flemp_mthly if bracket == "next9", col(ebblue) msym(O)) if year < 2020, ///
@@ -221,7 +221,7 @@ gr tw  (line chg2_flemp chg2_flemp if bracket == "next9", col(black) lw(medthick
     xlabel(-2(0.5)2, format(%2.1f)) ylabel(-2(0.5)2, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-next9-2y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-next9-2y.pdf", replace
 
 // Middle 40%
 gr tw  (line chg_flemp chg_flemp if bracket == "mid40", col(black) lw(medthick)) ///
@@ -231,7 +231,7 @@ gr tw  (line chg_flemp chg_flemp if bracket == "mid40", col(black) lw(medthick))
     xlabel(-1.5(0.5)1.5, format(%2.1f)) ylabel(-1.5(0.5)1.5, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-mid40-1y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-mid40-1y.pdf", replace
 
 gr tw  (line chg2_flemp chg2_flemp if bracket == "mid40", col(black) lw(medthick)) ///
     (sc chg2_flemp chg2_flemp_mthly if bracket == "mid40", col(ebblue) msym(O)) if year < 2020, ///
@@ -240,7 +240,7 @@ gr tw  (line chg2_flemp chg2_flemp if bracket == "mid40", col(black) lw(medthick
     xlabel(-2(0.5)2, format(%2.1f)) ylabel(-2(0.5)2, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-mid40-2y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-mid40-2y.pdf", replace
 
 // Bottom 50%
 gr tw  (line chg_flemp chg_flemp if bracket == "bot50", col(black) lw(medthick)) ///
@@ -250,7 +250,7 @@ gr tw  (line chg_flemp chg_flemp if bracket == "bot50", col(black) lw(medthick))
     xlabel(-1.5(0.5)1.5, format(%2.1f)) ylabel(-1.5(0.5)1.5, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-bot50-1y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-bot50-1y.pdf", replace
 
 gr tw  (line chg2_flemp chg2_flemp if bracket == "bot50", col(black) lw(medthick)) ///
     (sc chg2_flemp chg2_flemp_mthly if bracket == "bot50", col(ebblue) msym(O)) if year < 2020, ///
@@ -259,7 +259,7 @@ gr tw  (line chg2_flemp chg2_flemp if bracket == "bot50", col(black) lw(medthick
     xlabel(-2(0.5)2, format(%2.1f)) ylabel(-2(0.5)2, format(%2.1f)) ///
     xtitle("QCEW + CPS") ///
     ytitle("Tax Data")
-graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-bot50-2y.pdf"
+graph export "$graphs/02-create-monthly-wages/qcew-cps-accuracy-bot50-2y.pdf", replace
 
 // -------------------------------------------------------------------------- //
 // Plot CPS/QCEW consistency
@@ -332,13 +332,25 @@ gr tw /// ///
 graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew.pdf", replace
 
 gr tw ///
-    (line flemp time if version == "QCEW/CPS" & bracket == "Top 1%", col(ebblue) lw(medthick)) ///
-    (scatter flemp time if version == "DINA" & bracket == "Top 1%", msym(Oh) msize(small) col(cranberry)), ///
-    ytitle("Top 1% share of wages (%)") xtitle("") xsize(5) ysize(3) ///
-    note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)') ///
-    legend(pos(3) ///
-        cols(1) label(1 "QCEW + CPS") ///
-        label(2 "Tax Data") ///
+    (sc flemp time if version == "DINA" & bracket == "Top 1%" & year < 2020, msym(Oh) msize(small) lw(medthick) col(cranberry)), ///
+    ytitle("Top 1% share of wages (%)") xtitle("") xsize(4) ysize(3)  yscale(range(5 13)) ylabel(5(1)13) ///
+    note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)') xscale(range(`=ym(1980, 1)' `=ym(2022, 5)')) ///
+    legend(pos(6) ///
+        rows(1) ///
+        label(1 "Annual Tax Data") ///
+        order(1) ///
+    )
+graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew-top1-step1.pdf", replace
+
+gr tw ///
+    (sc flemp time if version == "DINA" & bracket == "Top 1%" & year < 2020, msym(Oh) msize(small) lw(medthick) col(cranberry)) ///
+    (line flemp time if version == "QCEW/CPS" & bracket == "Top 1%", col(ebblue) lw(medthick)), ///
+    ytitle("Top 1% share of wages (%)") xtitle("") xsize(4) ysize(3) yscale(range(5 13)) ylabel(5(1)13) ///
+    note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)') xscale(range(`=ym(1980, 1)' `=ym(2022, 5)')) ///
+    legend(pos(6) ///
+        rows(1) label(2 "Monthly Estimate") ///
+        label(1 "Annual Tax Data") ///
         order(2 1) ///
     )
-graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew-top1.pdf", replace
+graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew-top1-step2.pdf", replace
+

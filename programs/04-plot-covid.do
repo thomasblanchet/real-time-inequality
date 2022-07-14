@@ -64,7 +64,7 @@ replace deficit_max = 0 if deficit_max < 0
 gr tw (con princ time, lw(medthick) col(black) msym(Oh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "{bf:Factor national income}" "{it:(matching national income)}") ///
         order(1 - "{dup 60: }") ///
@@ -76,7 +76,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con princ time, lw(medthick) col(black) msym(Oh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "{bf:Factor national income}" "{it:(matching national income)}") ///
@@ -90,7 +90,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidsub_max time, lw(medthick) col(black) msym(Sh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "{bf:Factor national income}" "{it:(matching national income)}") ///
@@ -105,7 +105,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con princ time, lw(medthick) col(black) msym(Oh)) ///
     (con covidsub_max time, lw(medthick) col(black) msym(Sh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
-    yscale(range(0 4200)) ylabel(0(500)4000) ///
+    yscale(range(0 4200)) ylabel(0(500)4000) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     xtitle("") xsize(6) ysize(3) ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
@@ -124,7 +124,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidsub_max time, lw(medthick) col(black) msym(Sh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -144,7 +144,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con penben_max time, lw(medthick) col(black) msym(Th)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -166,7 +166,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con penben_max time, lw(medthick) col(black) msym(Th)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -190,7 +190,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con penben_max time, lw(medthick) col(black) msym(Th)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -216,7 +216,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidrelief_max time, lw(medthick) col(black) msym(Dh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -245,7 +245,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidrelief_max time, lw(medthick) col(black) msym(Dh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -276,7 +276,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidrelief_max time, lw(medthick) col(black) msym(Dh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -308,7 +308,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con covidrelief_max time, lw(medthick) col(black) msym(Dh)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -342,7 +342,7 @@ gr tw (rarea covidsub_min covidsub_max time, col(ebblue) lw(none)) ///
     (con poinc time, lw(medthick) col(black) msym(O)), ///
     ylabel(, format(%9.0gc)) ytitle("Monthly income per adult (constant USD)") ///
     yscale(range(0 4200)) ylabel(0(500)4000) ///
-    xtitle("") xsize(6) ysize(3) ///
+    xtitle("") xsize(6) ysize(3) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(pos(4) cols(1) region(margin(0 0 10 0)) ///
         label(1 "Paycheck Protection Program") ///
         label(2 "Unemployment insurance benefits") ///
@@ -468,7 +468,7 @@ replace bracket = "top10" if inrange(p, 90000, 98000)
 replace bracket = "top1"  if inrange(p, 99000, 99800)
 replace bracket = "top01" if inrange(p, 99900, 99999)
 
-gcollapse (sum) hweal (firstnm) nipa_deflator [pw=n], by(year month bracket)
+gcollapse (sum) hweal (mean) nipa_deflator [pw=n], by(year month bracket)
 
 generate time = ym(year, month)
 format time %tm
@@ -500,18 +500,18 @@ foreach v of varlist hweal* {
     replace `v' = 100*`v'/`v'ini
 }
 
-gr tw (con hwealmid40 time if ym(year, month) <= ym(2022, 04), lw(medthick) msym(Oh) col(ebblue)) ///
-    (con hwealtop10 time if ym(year, month) <= ym(2022, 04), lw(medthick) msym(Sh) col(cranberry)) ///
-    (con hwealtop1 time if ym(year, month) <= ym(2022, 04), lw(medthick) msym(Th) col(green)) ///
-    (con hwealtop01 time if ym(year, month) <= ym(2022, 04), lw(medthick) msym(Dh) col(dkorange)) ///
+gr tw (con hwealmid40 time if ym(year, month) <= ym(2022, 05), lw(medthick) msym(Oh) col(ebblue)) ///
+    (con hwealtop10 time if ym(year, month) <= ym(2022, 05), lw(medthick) msym(Sh) col(cranberry)) ///
+    (con hwealtop1 time if ym(year, month) <= ym(2022, 05), lw(medthick) msym(Th) col(green)) ///
+    (con hwealtop01 time if ym(year, month) <= ym(2022, 05), lw(medthick) msym(Dh) col(dkorange)) ///
     ///
-    (con hwealmid40 time if ym(year, month) >= ym(2022, 04), lw(medthick) lp(shortdash) msym(Oh) col(ebblue)) ///
-    (con hwealtop10 time if ym(year, month) >= ym(2022, 04), lw(medthick) lp(shortdash) msym(Sh) col(cranberry)) ///
-    (con hwealtop1 time if ym(year, month) >= ym(2022, 04), lw(medthick) lp(shortdash) msym(Th) col(green)) ///
-    (con hwealtop01 time if ym(year, month) >= ym(2022, 04), lw(medthick) lp(shortdash) msym(Dh) col(dkorange)), ///
+    (con hwealmid40 time if ym(year, month) >= ym(2022, 05), lw(medthick) lp(shortdash) msym(Oh) col(ebblue)) ///
+    (con hwealtop10 time if ym(year, month) >= ym(2022, 05), lw(medthick) lp(shortdash) msym(Sh) col(cranberry)) ///
+    (con hwealtop1 time if ym(year, month) >= ym(2022, 05), lw(medthick) lp(shortdash) msym(Th) col(green)) ///
+    (con hwealtop01 time if ym(year, month) >= ym(2022, 05), lw(medthick) lp(shortdash) msym(Dh) col(dkorange)), ///
     ///
-    ytitle("Average wealth per adult (constant)" "07/2019 = 100") ///
-    xtitle("") xsize(6) ysize(4) scale(1.2) xscale(range(`=ym(2019, 7)' `=ym(2022, 8)')) ///
+    ytitle("Average wealth per adult (constant USD)" "07/2019 = 100") ///
+    xtitle("") xsize(6) ysize(4) scale(1.2) xscale(range(`=ym(2019, 7)' `=ym(2022, 8)')) xlabel(`=ym(2019, 7)'(6)`=ym(2022, 8)') ///
     legend(ring(0) bplacement(5) cols(1) ///
         label(1 "Middle 40%") ///
         label(2 "Top 10%") ///

@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------- //
 
 global date_begin = ym(2021, 01)
-global date_end   = ym(2022, 04)
+global date_end   = ym(2022, 05)
 
 cap use "$work/03-build-online-database/online-database.dta", clear
 if (_rc == 0) {

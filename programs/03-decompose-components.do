@@ -2,8 +2,8 @@
 // Database that decomposes the different income components on each month
 // -------------------------------------------------------------------------- //
 
-global date_begin = ym(2007, 12)
-global date_end   = ym(2022, 04)
+global date_begin = ym(2019, 07)
+global date_end   = ym(2022, 05)
 
 // Labels for graphs
 local label_princ "Factor national income"
@@ -50,8 +50,8 @@ local label_mortgage_tenant "Mortgages (tenant-occupied)"
 local label_mortgage_owner "Mortgages (owner-occupied)"
 local label_nonmortage "Non-mortage debt"
 
-foreach income in princ /*peinc dispo poinc hweal*/ {
-    foreach pop in /*adult*/ working_age {
+foreach income in /*princ peinc dispo poinc*/ hweal {
+    foreach pop in adult /*working_age*/ {
         quietly {
             clear
             save "$work/03-decompose-components/decomposition-monthly-`income'-`pop'.dta", replace emptyok
@@ -102,7 +102,7 @@ foreach income in princ /*peinc dispo poinc hweal*/ {
                 }
                 
                 // Get rank
-                sort princ
+                sort hweal
                 generate rank = sum(weight)
                 replace rank = 1e5*(rank - weight/2)/rank[_N]
 

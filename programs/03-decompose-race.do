@@ -122,6 +122,8 @@ graph export "$graphs/03-decompose-race/black-white-gaps-4.pdf", replace
 
 use "$work/03-decompose-race/decomposition-monthly-race.dta", clear
 
+keep if ym(year, month) <= ym(2022, 03)
+
 keep if type == "peinc"
 
 sort race type year month p

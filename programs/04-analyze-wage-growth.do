@@ -71,8 +71,8 @@ graph export "$graphs/04-analyze-wage-growth/employment-5.pdf", replace
 clear
 save "$work/04-analyze-wage-growth/decomposition-monthly-wages.dta", replace emptyok
 
-global date_begin = ym(1998, 01)
-global date_end   = ym(2022, 04)
+global date_begin = ym(2019, 01)
+global date_end   = ym(2022, 05)
 
 quietly {
     foreach t of numlist $date_begin / $date_end {
@@ -190,8 +190,8 @@ quietly {
 clear
 save "$work/04-analyze-wage-growth/decomposition-monthly-wages-top1.dta", replace emptyok
 
-global date_begin = ym(1998, 01)
-global date_end   = ym(2022, 04)
+global date_begin = ym(2019, 01)
+global date_end   = ym(2022, 05)
 
 quietly {
     foreach t of numlist $date_begin / $date_end {
@@ -596,7 +596,7 @@ reshape wide wage, i(year month time) j(quartile)
 gr tw line wage* time, lw(medthick..) legend(off) lcol(ebblue cranberry orange purple) scale(1.2) ///
     ytitle("Average real labor income" "Index (2019m1 = 100)") xtitle("") ///
     text(90 `=ym(2020, 11)' "2nd quartile", size(small) col(ebblue)) ///
-    text(102 `=ym(2021, 7)' "3rd quartile", size(small) col(cranberry)) ///
-    text(108 `=ym(2022, 1)' "4th quartile", size(small) col(orange)) ///
-    text(110 `=ym(2021, 1)' "Top 1%", size(small) col(purple))
+    text(104 `=ym(2022, 1)' "3rd quartile", size(small) col(cranberry)) ///
+    text(107.5 `=ym(2021, 6)' "4th quartile", size(small) col(orange)) ///
+    text(114.5 `=ym(2021, 8)' "Top 1%", size(small) col(purple))
 gr export "$graphs/04-analyze-wage-growth/wage-growth-covid.pdf", replace

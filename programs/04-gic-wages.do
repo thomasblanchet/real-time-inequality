@@ -10,7 +10,7 @@ global pre2008_peak = ym(2007, 12)
 global post2008_recov = ym(2017, 05)
 
 global preCOVID_peak = ym(2020, 02)
-global postCOVID_recov = ym(2022, 04)
+global postCOVID_recov = ym(2022, 05)
 
 local j = 1
 foreach t in $pre2008_peak $post2008_recov $preCOVID_peak $postCOVID_recov {
@@ -22,7 +22,7 @@ foreach t in $pre2008_peak $post2008_recov $preCOVID_peak $postCOVID_recov {
     // Calculate wage income
     generate wage = flemp + 0.7*proprietors
     
-    gegen wage = mean(wage), by(id) replace
+    //gegen wage = mean(wage), by(id) replace
     
     // Get rank
     sort wage
@@ -56,11 +56,11 @@ generate growth_covid = 100*((wage4/wage3)^(12/(${postCOVID_recov} - ${preCOVID_
 gr tw (con growth_2008 p if p >= 25000, col(ebblue) lw(medthick) msym(Sh)) ///
     (con growth_covid p if p >= 25000, col(cranberry) lw(medthick) msym(Oh)), ///
     xtitle("Percentiles (working-age population)") ytitle("Annualized real labor income growth (%)") ///
-    ylabel(0(1)6, format(%01.0f)) xlabel(25000 "25-30%" 30000 "30-35%" 35000 "35-40%" ///
+    ylabel(0(1)4, format(%01.0f)) xlabel(25000 "25-30%" 30000 "30-35%" 35000 "35-40%" ///
         40000 "40-45%" 45000 "45-50%" 50000 "50-55%" 55000 "55-60%" 60000 "60-65%" ///
         65000 "65-70%" 70000 "70-75%" 75000 "75-80%" 80000 "80-85%" 85000 "85-90%" ///
         90000 "90-95%" 95000 "95-99%" 99000 "Top 1%", alternate labsize(small)) ///
     legend(off) ///
-    text(4 45000 "COVID recession" "and recovery" "(02/2020 to 04/2022)", col(cranberry) size(small)) ///
-    text(1 35000 "Great recession" "and recovery" "(12/2007 to 05/2017)", col(ebblue) size(small))
+    text(2.7 45000 "COVID recession" "and recovery" "(02/2020 to 05/2022)", col(cranberry) size(small)) ///
+    text(0.9 35000 "Great recession" "and recovery" "(12/2007 to 05/2017)", col(ebblue) size(small))
 graph export "$graphs/04-gic-wages/gic-wages.pdf", replace
