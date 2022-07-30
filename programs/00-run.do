@@ -399,6 +399,11 @@ do "$programs/03-build-monthly-microfiles-backtest-rescaling-2y.do"
 
 cap mkdir "$work/03-build-online-database"
 do "$programs/03-build-online-database.do"
+
+cap mkdir "$work/03-build-online-database-labor"
+cap mkdir "$graphs/03-build-online-database-labor"
+do "$programs/03-build-online-database-labor.do"
+
 // Dataset for the daily projection of wealth (done by the website)
 do "$programs/03-build-online-extrapolation.do"
 

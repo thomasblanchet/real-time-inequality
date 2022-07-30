@@ -323,21 +323,18 @@ gr tw (line chgref1_average99 chgref1_average99 if bracket == "bot50" & income =
     ytitle("Actual growth rate (%)")
 graph export "$graphs/04-backtest/pred-avg-bot50-1y.pdf", replace
     
-replace year_label = ""
-replace year_label = "1985" if year == 1985
-replace year_label = "2012" if year == 2012
-replace year_label = "2018" if year == 2018
-gr tw (line chgref2_average99 chgref2_average99 if bracket == "bot50" & income == "princ" & unit == "equal-split" & !tax_reform, col(black) lw(medthick)) ///
-    (scatter chgref2_average99 chgref2_average2 if bracket == "bot50" & income == "princ" & unit == "equal-split" & !tax_reform, ///
+// Bottom 50%
+gr tw (line chgref1_share99 chgref1_share99 if bracket == "bot50" & income == "princ" & unit == "equal-split" & !tax_reform, col(black) lw(medthick)) ///
+    (scatter chgref1_share99 chgref1_share1 if bracket == "bot50" & income == "princ" & unit == "equal-split" & !tax_reform, ///
         col(ebblue) msym(O) mlabel(year_label) mlabcol(black)) ///
-    (scatter chgref2_average99 chgref2_average2 if bracket == "bot50" & income == "princ" & unit == "equal-split" & tax_reform, ///
+    (scatter chgref1_share99 chgref1_share1 if bracket == "bot50" & income == "princ" & unit == "equal-split" & tax_reform, ///
         col(cranberry) msym(T) mlabel(year_label) mlabcol(black)), ///
     aspectratio(1) xsize(4) ysize(4) legend(off) scale(1.2) ///
-    xscale(range(-15 15)) yscale(range(-15 15)) ///
-    ylabel(-15(5)15) xlabel(-15(5)15) ///
+    xscale(range(-10 10)) yscale(range(-10 10)) ///
+    ylabel(-10(5)10) xlabel(-10(5)10) ///
     xtitle("Predicted growth rate (%)") ///
     ytitle("Actual growth rate (%)")
-graph export "$graphs/04-backtest/pred-avg-bot50-2y.pdf", replace
+graph export "$graphs/04-backtest/pred-share-bot50-1y.pdf", replace
 
 // Middle 40%
 replace year_label = ""

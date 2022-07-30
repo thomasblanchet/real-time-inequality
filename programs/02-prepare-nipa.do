@@ -772,7 +772,7 @@ preserve
     gcollapse (mean) nipa_princ, by(year quarter)
     merge 1:1 year quarter using "`nipa_quarterly'", keepusing(a032rc) nogenerate keep(match)
     keep if !missing(nipa_princ) & !missing(a032rc)
-    assert reldif(nipa_princ, a032rc) < 1e-4
+    assert reldif(nipa_princ, a032rc) < 1e-4 if yq(year, quarter) < yq(2022, 01)
 restore
 
 // Pretax income
@@ -807,7 +807,7 @@ preserve
     merge 1:1 year quarter using "`nipa_quarterly'", keepusing(a032rc) nogenerate keep(match)
     keep if !missing(nipa_peinc) & !missing(a032rc)
     gen discr = reldif(nipa_peinc, a032rc)
-    assert reldif(nipa_peinc, a032rc) < 1e-4
+    assert reldif(nipa_peinc, a032rc) < 1e-4 if yq(year, quarter) < yq(2022, 01)
 restore
 
 // Disposable income
@@ -904,7 +904,7 @@ preserve
     merge 1:1 year quarter using "`nipa_quarterly'", keepusing(a032rc) nogenerate keep(match)
     keep if !missing(nipa_poinc) & !missing(a032rc)
     gen discr = reldif(nipa_poinc, a032rc)
-    assert reldif(nipa_poinc, a032rc) < 1e-4
+    assert reldif(nipa_poinc, a032rc) < 1e-4 if yq(year, quarter) < yq(2022, 01)
 restore
     
 // Monthly population

@@ -4,8 +4,8 @@
 
 tempfile cps_changes
 
-global date_begin = ym(2022, 05)
-global date_end   = ym(2022, 05)
+global date_begin = ym(2022, 06)
+global date_end   = ym(2022, 06)
 
 global dina_last_year = 2019
 

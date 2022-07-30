@@ -366,13 +366,11 @@ graph export "$graphs/04-plot-covid/presentation-bot50-step13.pdf", replace
 // Compare evolution of averages
 // -------------------------------------------------------------------------- //
 
-use "$work/03-decompose-components/decomposition-monthly-princ-adult.dta", clear
-merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-peinc-adult.dta", nogenerate //assert(match)
-merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-dispo-adult.dta", nogenerate //assert(match)
-merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-poinc-adult.dta", nogenerate //assert(match)
-merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-hweal-adult.dta", nogenerate //assert(match)
-
-keep if inrange(ym(year, month), ym(2019, 7), ym(2022, 03))
+use "$work/03-decompose-components/decomposition-monthly-princ-working_age.dta", clear
+merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-peinc-working_age.dta", nogenerate //assert(match)
+merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-dispo-working_age.dta", nogenerate //assert(match)
+merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-poinc-working_age.dta", nogenerate //assert(match)
+merge 1:1 year month p using "$work/03-decompose-components/decomposition-monthly-hweal-working_age.dta", nogenerate //assert(match)
 
 merge n:1 year month using "$work/02-prepare-nipa/nipa-simplified-monthly.dta", nogenerate keepusing(nipa_deflator) keep(master match) assert(match using)
 
@@ -396,12 +394,36 @@ foreach v of varlist princ dispo hweal {
 
 sort bracket time
 
+preserve
+    keep if inrange(ym(year, month), ym(2007, 7), ym(2017, 07))
+
+    foreach v of varlist princ dispo hweal {
+        by bracket: generate `v'0 = `v'[1]
+        by bracket: replace `v' = 100*`v'/`v'0
+    }
+
+    gr tw (con princ time if bracket == "Bottom 50%", lw(medthick) msym(Oh) col(ebblue)) ///
+        (con princ time if bracket == "Middle 40%", lw(medthick) msym(Sh) col(cranberry)) ///
+        (con princ time if bracket == "Next 9%", lw(medthick) msym(Th) col(green)) ///
+        (con princ time if bracket == "Top 1%", lw(medthick) msym(Dh) col(dkorange)), ///
+        ytitle("Average income per adult (constant)" "07/2007 = 100") xlabel(`=ym(2007, 01)'(24)`=ym(2017, 01)') ///
+        xtitle("") xsize(6) ysize(4) scale(1.2) yscale(range(70 110)) ylabel(70(10)110) ///
+        legend(ring(0) bplacement(5) cols(1) ///
+            label(1 "Bottom 50%") ///
+            label(2 "Middle 40%") ///
+            label(3 "Next 9%") ///
+            label(4 "Top 1%") ///
+            order(4 3 2 1) ///
+        )
+    graph export "$graphs/04-plot-covid/presentation-evolution-princ-great-recession.pdf", replace
+restore
+
+keep if inrange(ym(year, month), ym(2019, 7), ym(2022, 03))
+
 foreach v of varlist princ dispo hweal {
     by bracket: generate `v'0 = `v'[1]
     by bracket: replace `v' = 100*`v'/`v'0
 }
-
-keep if time <= ym(2022, 03)
 
 gr tw (con princ time if bracket == "Bottom 50%", lw(medthick) msym(Oh) col(ebblue)) ///
     (con princ time if bracket == "Middle 40%", lw(medthick) msym(Sh) col(cranberry)) ///

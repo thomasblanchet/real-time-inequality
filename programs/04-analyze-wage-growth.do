@@ -26,8 +26,13 @@ global postCOVID_recov = ym(2022, 02)
 
 gr tw (line emprate time, lw(medthick) col(ebblue)) if time >= ym(2019, 1), scale(1.2) ///
     legend(off) ytitle("Employment to working-age population ratio (%)") ///
-    xtitle("") xlabel(`=ym(2019, 1)'(12)`=ym(2022, 1)')
-graph export "$graphs/04-analyze-wage-growth/employment-1.pdf", replace
+    xtitle("") xlabel(`=ym(2019, 1)'(12)`=ym(2022, 1)') ylabel(67(1)79)
+graph export "$graphs/04-analyze-wage-growth/employment.pdf", replace
+
+gr tw (line emprate time, lw(medthick) col(ebblue)) if inrange(time, ym(2007, 7), ym(2017, 7)), scale(1.2) ///
+    legend(off) ytitle("Employment to working-age population ratio (%)") ///
+    xtitle("") xlabel(`=ym(2008, 1)'(24)`=ym(2017, 1)') ylabel(67(1)79)
+graph export "$graphs/04-analyze-wage-growth/employment-great-recession.pdf", replace
 
 gr tw (line emprate time, lw(medthick) col(ebblue)) (sc emprate time if inlist(time, $pre2008_peak), col(cranberry)), ///
     legend(off) ytitle("Employment to working-age population ratio (%)") ///

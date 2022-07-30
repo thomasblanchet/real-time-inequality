@@ -2,8 +2,8 @@
 // Build the online database
 // -------------------------------------------------------------------------- //
 
-global date_begin = ym(2021, 01)
-global date_end   = ym(2022, 05)
+global date_begin = ym(2022, 01)
+global date_end   = ym(2022, 06)
 
 cap use "$work/03-build-online-database/online-database.dta", clear
 if (_rc == 0) {
@@ -11,7 +11,7 @@ if (_rc == 0) {
 }
 save "$work/03-build-online-database/online-database.dta", emptyok replace 
 
-local income_variables factor_income pretax_income disposable_income posttax_income wage_income wealth
+local income_variables factor_income pretax_income disposable_income posttax_income wealth
 tempfile micro data groups total
 
 quietly {
@@ -114,7 +114,7 @@ quietly {
                 timer list 1
             
                 noisily display "* `v', `unit', `year'm`month' [`=r(t1)' seconds]"
-            }   
+            }
         }
     }
 }

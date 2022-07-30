@@ -348,7 +348,7 @@ gr tw ///
     ytitle("Top 1% share of wages (%)") xtitle("") xsize(4) ysize(3) yscale(range(5 13)) ylabel(5(1)13) ///
     note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)') xscale(range(`=ym(1980, 1)' `=ym(2022, 5)')) ///
     legend(pos(6) ///
-        rows(1) label(2 "Monthly Estimate") ///
+        rows(1) label(2 "Monthly (QCEW)") ///
         label(1 "Annual Tax Data") ///
         order(2 1) ///
     )

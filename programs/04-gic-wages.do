@@ -22,7 +22,7 @@ foreach t in $pre2008_peak $post2008_recov $preCOVID_peak $postCOVID_recov {
     // Calculate wage income
     generate wage = flemp + 0.7*proprietors
     
-    //gegen wage = mean(wage), by(id) replace
+    *gegen wage = mean(wage), by(id) replace
     
     // Get rank
     sort wage
