@@ -81,7 +81,6 @@ forvalue i = 1/5 {
 
 // Transform back
 generate avg_mthly_wages_sa = exp(seasadj)
-
 gr tw line avg_mthly_wages avg_mthly_wages_sa time if p == 30000 & version == "NAICS", ///
     lw(medthick..) lcol(ebblue cranberry) xtitle("") ytitle("Current USD") ///
     legend(label(1 "p = 30%, raw") label(2 "p = 30%, seasonally adjusted"))

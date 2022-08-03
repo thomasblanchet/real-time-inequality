@@ -486,5 +486,118 @@ gr tw con avg_mthly_wages avg_mthly_wages_bt time, by(quartile, note("")) ///
     legend(label(1 "True") label(2 "Extrapolated after 01/2020"))
 graph export "$graphs/02-update-qcew/extrapolation-backtest-wage.pdf", replace
 
+// -------------------------------------------------------------------------- //
+// Perform systematic backtesting of CES extrapolation
+// -------------------------------------------------------------------------- //
 
+global date_begin = ym(2007, 12)
+global date_end = ym(2021, 12)
+
+quietly {
+    foreach t of numlist $date_begin (3) $date_end {
+        use id year month time mthly_emplvl avg_mthly_wages chg_mthly_emplvl_pred chg_avg_mthly_wages_pred ///
+            if inrange(time, `t', `t' + 6) using "$work/02-update-qcew/qcew-monthly-updated-backtesting.dta", clear
+        
+        local year = year(dofm(`t'))
+        local month = month(dofm(`t'))
+        
+        // Last value before backtesting
+        generate last_mthly_emplvl_bt = mthly_emplvl if time == `t'
+        generate last_avg_mthly_wages_bt = avg_mthly_wages if time == `t'
+        //sort id year month
+        by id: carryforward last_mthly_emplvl_bt last_avg_mthly_wages_bt, replace
+
+        // Cumulate to get prediction
+        replace chg_mthly_emplvl_pred = 0 if time == `t'
+        replace chg_avg_mthly_wages_pred = 0 if time == `t'
+        by id: generate mthly_emplvl_bt`t' = last_mthly_emplvl_bt*exp(sum(chg_mthly_emplvl_pred))
+        by id: generate avg_mthly_wages_bt`t' = last_avg_mthly_wages_bt*exp(sum(chg_avg_mthly_wages_pred))
+
+        drop last_mthly_emplvl_bt last_avg_mthly_wages_bt chg_mthly_emplvl_pred chg_avg_mthly_wages_pred
+        
+        compress
+        save "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting`t'.dta", replace
+        
+        noisily di "* `year'm`month'"
+    }
+}
+
+clear
+
+use if version == "NAICS" & inrange(ym(year, month), $date_begin, $date_end + 6) ///
+    using "$work/02-update-qcew/qcew-monthly-updated.dta", clear
+
+// Tabulate
+hashsort year month avg_mthly_wages
+
+by year month: generate rank = sum(mthly_emplvl)
+by year month: replace rank = 1e5*(rank - mthly_emplvl/2)/rank[_N]
+
+egen p = cut(rank), at(0(1000)99000 100001)
+
+gcollapse (mean) avg_mthly_wages [aw=mthly_emplvl], by(year month p)
+
+save "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting-tabulations.dta", replace
+
+foreach t of numlist $date_begin (3) $date_end {
+    use "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting`t'.dta", clear
+    
+    // Tabulate
+    hashsort year month avg_mthly_wages_bt`t'
+
+    by year month: generate rank = sum(mthly_emplvl_bt`t')
+    by year month: replace rank = 1e5*(rank - mthly_emplvl_bt`t'/2)/rank[_N]
+
+    egen p = cut(rank), at(0(1000)99000 100001)
+
+    gcollapse (mean) avg_mthly_wages=avg_mthly_wages_bt`t' [aw=mthly_emplvl_bt`t'], by(year month p)
+    
+    generate bt = `t'
+    format bt %tm
+    
+    append using "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting-tabulations.dta"
+    save "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting-tabulations.dta", replace
+}
+
+use "$work/02-update-qcew/backtesting-ces/qcew-ces-backtesting-tabulations.dta", clear
+
+generate time = ym(year, month)
+format time %tm
+
+hashsort bt year month
+
+gegen total = total(avg_mthly_wages), by(bt year month)
+generate share = 100*avg_mthly_wages/total
+
+generate bracket = ""
+replace bracket = "bot50" if inrange(p, 0, 49000)
+replace bracket = "top10" if inrange(p, 90000, 100000)
+
+gcollapse (sum) share if year >= 2019, by(year month time bt bracket)
+
+gr tw (line share time if missing(bt) & bracket == "bot50", col(ebblue) lw(medthick)) ///
+    (line share time if bt == 713 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 716 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 719 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 722 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 725 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 728 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 731 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 734 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)), ///
+    xtitle("") ytitle("Bottom 50% wage income share in QCEW (%)") ///
+    legend(label(1 "QCEW") label(2 "Extrapolation from CES") order(1 2)) 
+graph export "$graphs/02-update-qcew/extrapolation-bot50.pdf", replace
+
+gr tw (line share time if missing(bt) & bracket == "top10", col(ebblue) lw(medthick)) ///
+    (line share time if bt == 713 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 716 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 719 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 722 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 725 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 728 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 731 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
+    (line share time if bt == 734 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)), ///
+    xtitle("") ytitle("Top 10% wage income share in QCEW (%)") ///
+    legend(label(1 "QCEW") label(2 "Extrapolation from CES") order(1 2)) 
+graph export "$graphs/02-update-qcew/extrapolation-top10.pdf", replace
 

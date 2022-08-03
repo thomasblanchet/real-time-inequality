@@ -329,6 +329,7 @@ cap mkdir "$work/02-disaggregate-qcew"
 do "$programs/02-disaggregate-qcew.do"
 
 cap mkdir "$work/02-update-qcew"
+cap mkdir "$work/02-update-qcew/backtesting-ces"
 cap mkdir "$graphs/02-update-qcew"
 do "$programs/02-update-qcew.do"
 

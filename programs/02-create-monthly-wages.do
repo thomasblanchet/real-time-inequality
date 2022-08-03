@@ -314,7 +314,6 @@ collapse (sum) flemp [pw=n], by(version year month bracket)
 egen total = total(flemp), by(version year month)
 
 replace flemp = 100*flemp/total
-
 generate time = ym(year, month)
 replace time = ym(year, 7) if version == "DINA"
 format time %tm
@@ -344,7 +343,7 @@ graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew-top1-step1.pdf", r
 
 gr tw ///
     (sc flemp time if version == "DINA" & bracket == "Top 1%" & year < 2020, msym(Oh) msize(small) lw(medthick) col(cranberry)) ///
-    (line flemp time if version == "QCEW/CPS" & bracket == "Top 1%", col(ebblue) lw(medthick)), ///
+    (line flemp time if version == "QCEW/CPS" & bracket == "Top 1%", col(ebblue) lw(medthick))  ///
     ytitle("Top 1% share of wages (%)") xtitle("") xsize(4) ysize(3) yscale(range(5 13)) ylabel(5(1)13) ///
     note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)') xscale(range(`=ym(1980, 1)' `=ym(2022, 5)')) ///
     legend(pos(6) ///

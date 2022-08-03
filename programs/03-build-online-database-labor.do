@@ -140,6 +140,13 @@ replace pop = (0.1 - 0.01)*pop if group == "Top 10%-1%"
 
 gegen pop = mean(pop), by(group year month unit) replace
 
+// Fix glitch in 1985/12
+replace value = . if group == "Top 1%" & time == ym(1985, 12)
+sort group income unit time
+by group income unit: ipolate value time, gen(i)
+replace value = i if group == "Top 1%" & time == ym(1985, 12)
+drop i
+
 greshape wide value, i(group year month unit) j(income) string
 renvars value*, predrop(5)
 
