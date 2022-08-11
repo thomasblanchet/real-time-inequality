@@ -576,27 +576,27 @@ replace bracket = "top10" if inrange(p, 90000, 100000)
 gcollapse (sum) share if year >= 2019, by(year month time bt bracket)
 
 gr tw (line share time if missing(bt) & bracket == "bot50", col(ebblue) lw(medthick)) ///
-    (line share time if bt == 713 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 716 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 719 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 722 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 725 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 728 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 731 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 734 & bracket == "bot50", col(cranberry) lw(medthick) lp(dash)), ///
+    (line share time if bt == 713 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 716 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 719 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 722 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 725 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 728 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 731 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 734 & bracket == "bot50", /*col(cranberry)*/ lw(medthick) lp(dash)), ///
     xtitle("") ytitle("Bottom 50% wage income share in QCEW (%)") ///
     legend(label(1 "QCEW") label(2 "Extrapolation from CES") order(1 2)) 
 graph export "$graphs/02-update-qcew/extrapolation-bot50.pdf", replace
 
 gr tw (line share time if missing(bt) & bracket == "top10", col(ebblue) lw(medthick)) ///
-    (line share time if bt == 713 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 716 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 719 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 722 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 725 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 728 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 731 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)) ///
-    (line share time if bt == 734 & bracket == "top10", col(cranberry) lw(medthick) lp(dash)), ///
+    (line share time if bt == 713 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 716 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 719 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 722 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 725 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 728 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 731 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)) ///
+    (line share time if bt == 734 & bracket == "top10", /*col(cranberry)*/ lw(medthick) lp(dash)), ///
     xtitle("") ytitle("Top 10% wage income share in QCEW (%)") ///
     legend(label(1 "QCEW") label(2 "Extrapolation from CES") order(1 2)) 
 graph export "$graphs/02-update-qcew/extrapolation-top10.pdf", replace

@@ -298,6 +298,8 @@ use "$work/02-create-monthly-wages/monthly-tabulations-flemp.dta", clear
 
 generate version = "QCEW/CPS"
 append using "`dina_flemp'"
+append using "$work/02-adjust-seasonality-qcew/qcew-tabulations-sa.dta"
+replace flemp = avg_mthly_wages_sa if inlist(version, "NAICS", "SIC")
 replace version = "DINA" if missing(version)
 
 sort version year month p
@@ -318,6 +320,22 @@ generate time = ym(year, month)
 replace time = ym(year, 7) if version == "DINA"
 format time %tm
 
+gr tw ///
+    (sc flemp time if version == "DINA" & bracket == "Top 1%" & year < 2020, msym(Oh) msize(small) lw(medthick) col(cranberry)) ///
+    (line flemp time if version == "QCEW/CPS" & bracket == "Top 1%", col(ebblue) lw(medthick)) ///
+    (line flemp time if version == "NAICS" & bracket == "Top 1%", col(green) lw(medthick)) ///
+    (line flemp time if version == "SIC" & bracket == "Top 1%", col(orange) lw(medthick)), ///
+    ytitle("Top 1% share of wages (%)") xtitle("") xsize(5) ysize(3) yscale(range(0 13)) ylabel(0(2)12) ///
+    note("") legend(pos(3)) scale(1.3) xlabel(`=ym(1980, 1)'(120)`=ym(2020, 1)', alternate) xscale(range(`=ym(1980, 1)' `=ym(2022, 5)')) ///
+    legend(pos(3) ///
+        cols(1) label(2 "Adjusted") ///
+        label(1 "Annual Tax Data") ///
+        label(3 "NAICS" "(current version)") ///
+        label(4 "SIC" "(old version)") ///
+        order(1 - "" - "" - "{bf:QCEW}" 2 3 4) ///
+    )
+graph export "$graphs/02-create-monthly-wages/flemp-dina-qcew-adjustements.pdf", replace
+    
 gr tw /// ///
     (line flemp time if version == "QCEW/CPS", col(ebblue) lw(medthick)) ///
     (scatter flemp time if version == "DINA" & year < 2020, msym(Oh) msize(small) col(cranberry)), ///
